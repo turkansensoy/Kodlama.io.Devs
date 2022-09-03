@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Persistence.Repositories
 {
-    public interface IRepository<T>  where T: Entity
+    public interface IRepository<T>:IQuery<T> where T: Entity
     {
         T Get(Expression<Func<T, bool>> predicate);
         T Delete(T entity);
