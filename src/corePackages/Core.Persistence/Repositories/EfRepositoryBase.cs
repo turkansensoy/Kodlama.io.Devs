@@ -88,5 +88,10 @@ namespace Core.Persistence.Repositories
             await Context.SaveChangesAsync();
             return entity;
         }
+
+        public async Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> predicate)
+        {
+          return await Context.Set<TEntity>().FirstOrDefaultAsync(predicate);
+        }
     }
 }
