@@ -1,4 +1,5 @@
 ﻿using Application.Features.ProgrammingLanguages.Rules;
+using Application.Features.Technologies.Rules;
 using Core.Application.Validation;
 using FluentValidation;
 using MediatR;
@@ -21,6 +22,7 @@ namespace Application
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             services.AddScoped<ProgrammingLanguageBusinessRules>();
+            services.AddScoped<TechnologyBusinessRules>();
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 
             return services;

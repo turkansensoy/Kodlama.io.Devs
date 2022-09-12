@@ -21,5 +21,6 @@ namespace Core.Persistence.Repositories
         Task<T> UpdateAsync(T entity);
         Task<T> DeleteAsync(T entity);
 
+
     }
 }
