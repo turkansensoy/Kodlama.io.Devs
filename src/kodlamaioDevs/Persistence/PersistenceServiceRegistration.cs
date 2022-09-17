@@ -20,6 +20,7 @@ namespace Persistence
             options.UseSqlServer(configuration.GetConnectionString("KodlamaioDevsProjectConnectionString")));
             services.AddScoped<IProgrammingLanguageRepository, ProgrammingLanguageRepository>();
             services.AddScoped<ITechnologyRepository, TechnologyRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             return services;
         }
 
